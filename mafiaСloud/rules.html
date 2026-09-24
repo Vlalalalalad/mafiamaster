@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Правила та ролі - Мафія</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">МАФ<span>ІЯ</span></a>
+  </nav>
+
+  <div class="screen active">
+    <div class="info-page">
+
+      <!-- Табс -->
+      <div class="info-tabs" id="infoTabs">
+        <button class="info-tab active" data-itab="rules">
+          <i class="fas fa-scroll"></i> Правила
+        </button>
+        <button class="info-tab" data-itab="roles">
+          <i class="fas fa-masks-theater"></i> Ролі
+        </button>
+        <button class="info-tab" data-itab="settings">
+          <i class="fas fa-sliders"></i> Налаштування
+        </button>
+      </div>
+
+      <!-- ── ПРАВИЛА ── -->
+      <div id="itabRules" class="info-content">
+
+        <div class="info-section">
+          <h2 class="info-title">Як грати в Мафію</h2>
+          <p class="info-lead">Мафія - психологічна гра на дедукцію та переконання. Двоє таборів: <strong>мирні жителі</strong> проти <strong>мафії</strong>. Ніхто не знає ролей інших.</p>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-users"></i> Склад гравців</div>
+          <div class="info-card">
+            <ul class="info-list">
+              <li>Мінімум <strong>6 гравців</strong>, оптимально <strong>8–10</strong></li>
+              <li>Мафія: приблизно <strong>1 на 3 мирних</strong> (напр. 2 мафія + 1 дон на 10 гравців)</li>
+              <li>Спеціальні ролі (шериф, лікар) - за бажанням</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-moon"></i> Ніч 0 - Знайомство</div>
+          <div class="info-card">
+            <ul class="info-list">
+              <li>Всі закривають очі</li>
+              <li>Ведучий будить <strong>мафію</strong> - вони мовчки знайомляться, дон себе позначає</li>
+              <li>Всі засинають. Ніч 0 закінчена - нікого не вбивають</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-sun"></i> День - Обговорення та голосування</div>
+          <div class="info-card">
+            <ul class="info-list">
+              <li>Ведучий оголошує результати ночі (хто вбитий або «місто прокинулось спокійно»)</li>
+              <li>Кожен гравець по черзі висловлюється - <strong>1 хвилина</strong></li>
+              <li>Будь-хто може виставити іншого на голосування</li>
+              <li>Голосування: всі одночасно вказують на підозрюваного. Хто набрав більшість - <strong>вибуває</strong></li>
+              <li>При нічиї - переголосування лишається тільки серед тих, хто в нічиї (решта кандидатів знімаються, голоси обнуляються)</li>
+              <li>Якщо й повторне голосування знову дало нічию - цього дня <strong>нікого не виганяють</strong>, настає ніч</li>
+              <li>Роль вибулого ведучий може розкрити або ні - за правилами столу</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-moon"></i> Ніч - Дії ролей</div>
+          <div class="info-card">
+            <ul class="info-list">
+              <li>Всі закривають очі та мовчать</li>
+              <li>Ведучий по черзі будить кожну роль. Стандартний порядок: <strong>Коханка → Адвокат → Дон → Мафія → Маніяк → Шериф → Лікар → Свідок</strong></li>
+              <li>Позицію перевірки Дона (до чи після пострілу Мафії) можна змінити у вкладці «Налаштування» - детальніше там</li>
+              <li>Кожна роль мовчки виконує свою дію (жестами або вказуванням)</li>
+              <li>Всі засинають - ведучий обробляє дії</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-star"></i> Кращий хід</div>
+          <div class="info-card">
+            <p class="info-text">Гравець, вбитий у <strong>першу бойову ніч</strong>, отримує право на «Кращий хід»: 20 секунд назвати трьох гравців яких він вважає мафією. Це єдиний шанс вплинути на гру після смерті.</p>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-trophy"></i> Умови перемоги</div>
+          <div class="info-cards-row">
+            <div class="info-win-card civil">
+              <div class="info-win-icon">🏆</div>
+              <div class="info-win-title">Мирні перемагають</div>
+              <div class="info-win-desc">Всі гравці мафії вибули з гри</div>
+            </div>
+            <div class="info-win-card mafia">
+              <div class="info-win-icon">☠️</div>
+              <div class="info-win-title">Мафія перемагає</div>
+              <div class="info-win-desc">Кількість мафії ≥ кількості мирних</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-ban"></i> Фоли та дискваліфікація</div>
+          <div class="info-card">
+            <ul class="info-list">
+              <li>Фол видається за порушення правил: підглядання вночі, зайві звуки, жести</li>
+              <li><strong>3 фоли</strong> - попередження, гравець може продовжувати</li>
+              <li><strong>4 фоли</strong> - дискваліфікація, гравець вибуває з гри (розкриття ролі при цьому залежить від налаштування «Розкриття ролей» у вкладці «Налаштування»)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── РОЛІ ── -->
+      <div id="itabRoles" class="info-content" style="display:none">
+
+        <div class="info-section">
+          <h2 class="info-title">Ролі гравців</h2>
+          <p class="info-lead">Кожен гравець отримує таємну роль. Ніхто крім ведучого не знає хто ким є.</p>
+        </div>
+
+        <!-- Мирний -->
+        <div class="role-info-card team-civil-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">🏘️</span>
+            <div>
+              <div class="role-info-name">Мирний житель</div>
+              <div class="role-info-team civil-team">Команда мирних</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Основа міста. Не має нічних дій, але є голосом совісті вдень.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Вільно говорити і висувати версії вдень</li>
+                <li>Голосувати за вибування підозрюваних</li>
+                <li>Виявляти мафію логікою і спостереженням</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Виконувати будь-які нічні дії</li>
+                <li>Розкривати свою роль (якщо це не вигідно)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Слідкуй за поведінкою вдень - хто надто мовчить, хто надто активно захищає інших.</div>
+        </div>
+
+        <!-- Мафія -->
+        <div class="role-info-card team-mafia-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">🔫</span>
+            <div>
+              <div class="role-info-name">Мафія</div>
+              <div class="role-info-team mafia-team">Команда мафії</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Злочинець що прикидається мирним вдень і вбиває вночі.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Вночі разом з командою вибирати жертву</li>
+                <li>Вдень прикидатись мирним</li>
+                <li>Брехати, переконувати, відводити підозри</li>
+                <li>Знати хто є ким у своїй команді</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Діяти самостійно - рішення командне</li>
+                <li>Вбити більше однієї людини за ніч</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Не мовч вдень - це підозріло. Активно звинувачуй мирних і захищай партнерів непомітно.</div>
+        </div>
+
+        <!-- Дон -->
+        <div class="role-info-card team-mafia-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">👑</span>
+            <div>
+              <div class="role-info-name">Дон</div>
+              <div class="role-info-team mafia-team">Команда мафії - Лідер</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Лідер мафії з додатковою здатністю - може вираховувати шерифа.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Все що може звичайна мафія</li>
+                <li>Вночі перевірити одного гравця: чи є він Шерифом</li>
+                <li>Координувати команду мафії</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Перевіряти більше одного гравця за ніч</li>
+                <li>Перевірка показує тільки «Шериф / Не шериф»</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Пріоритет - знайти і нейтралізувати шерифа поки він не розкрив всю команду.</div>
+        </div>
+
+        <!-- Шериф -->
+        <div class="role-info-card team-civil-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">⭐</span>
+            <div>
+              <div class="role-info-name">Шериф</div>
+              <div class="role-info-team civil-team">Команда мирних - Детектив</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Головний детектив міста. Щоночі перевіряє одного гравця на причетність до мафії.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Щоночі перевірити одного гравця: мафія чи ні</li>
+                <li>Ділитись інформацією з мирними вдень</li>
+                <li>Відкритися як шериф щоб підтвердити підозри</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Перевіряти більше одного гравця за ніч</li>
+                <li>Відразу вбити знайденого мафіозі</li>
+                <li>Розкриватись надто рано - стане мішенню</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Не розкривайся поки не маєш достатньо інформації. Мафія полює на шерифа в першу чергу.</div>
+        </div>
+
+        <!-- Лікар -->
+        <div class="role-info-card team-civil-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">🩺</span>
+            <div>
+              <div class="role-info-name">Лікар</div>
+              <div class="role-info-team civil-team">Команда мирних - Захисник</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Рятує гравців від смерті. Якщо лікар вибере ту ж людину що мафія - вбивства не станеться.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Щоночі рятувати одного гравця від вбивства</li>
+                <li>Рятувати себе (але не більше одного разу за гру)</li>
+                <li>Захищати підозрюваного шерифа</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Рятувати одну людину два рази поспіль</li>
+                <li>Знати хто мафія</li>
+                <li>Рятувати вже вбитих або вигнаних</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Намагайся вгадати хто стане мішенню. Захисти шерифа або найактивнішого мирного.</div>
+        </div>
+
+        <!-- Коханка -->
+        <div class="role-info-card team-civil-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">💋</span>
+            <div>
+              <div class="role-info-name">Коханка</div>
+              <div class="role-info-team civil-team">Команда мирних - Блокувальниця</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Вночі відвідує одного гравця і блокує його нічну дію - той не зможе вбити, лікувати, перевіряти чи захищати цієї ночі.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Щоночі заблокувати дію одного гравця (мафії, дона, шерифа, лікаря, маніяка, адвоката чи свідка)</li>
+                <li>Заздалегідь "знешкодити" підозрюваного мафіозі</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Блокувати двох гравців за одну ніч</li>
+                <li>Дізнатись чию саме роль вона заблокувала</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Блокуй того, кого підозрюєш у мафії, навіть без підтвердження від шерифа - це може врятувати чиєсь життя.</div>
+        </div>
+
+        <!-- Маніяк -->
+        <div class="role-info-card" style="border-left:3px solid rgba(142,68,173,.5)">
+          <div class="role-info-header">
+            <span class="role-info-emoji">🔪</span>
+            <div>
+              <div class="role-info-name">Маніяк</div>
+              <div class="role-info-team" style="color:#9b59b6">Незалежний - Одинак</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Самотній вбивця поза командами. Вбиває вночі незалежно від мафії. Перемагає, якщо лишається останнім живим або один проти одного мирного.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Щоночі обирати власну ціль для вбивства</li>
+                <li>Діяти незалежно - навіть проти мафії</li>
+                <li>Перемогти одноосібно, без союзників</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Вбити більше однієї людини за ніч</li>
+                <li>Перемогти, поки в живих лишається і мафія, і мирні</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Вдень поводься як звичайний мирний - у тебе немає команди, яка тебе прикриє.</div>
+        </div>
+
+        <!-- Самогубець -->
+        <div class="role-info-card" style="border-left:3px solid rgba(96,125,139,.5)">
+          <div class="role-info-header">
+            <span class="role-info-emoji">🎭</span>
+            <div>
+              <div class="role-info-name">Самогубець</div>
+              <div class="role-info-team" style="color:#90a4ae">Незалежний - Особлива мета</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Незвичайна мета: хоче, щоб місто вигнало його голосуванням вдень. Перемагає одразу, якщо це станеться. Програє, якщо його вбили вночі.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Перемогти одноосібно, якщо його вигнали голосуванням вдень</li>
+                <li>Навмисно поводитись підозріло, щоб напроситись на вигнання</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Перемогти, якщо його вбили вночі (мафія чи маніяк)</li>
+                <li>Сам голосувати за власне вигнання - рішення завжди за містом</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Розкажи історію, через яку хочеться тебе вигнати - але не настільки очевидну, щоб тебе вбили вночі замість цього.</div>
+        </div>
+
+        <!-- Свідок -->
+        <div class="role-info-card team-civil-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">👁️</span>
+            <div>
+              <div class="role-info-name">Свідок</div>
+              <div class="role-info-team civil-team">Команда мирних - Спостерігач</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Вночі стежить за одним гравцем і дізнається <strong>ім'я</strong> того, хто до нього приходив - але не роль відвідувача. Висновки доведеться робити самостійно.</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Щоночі стежити за одним гравцем і дізнатись ім'я відвідувача (якщо хтось приходив)</li>
+                <li>Ділитися спостереженнями з мирними вдень</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Дізнатись роль відвідувача напряму - лише його ім'я</li>
+                <li>Стежити за двома гравцями одночасно</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Зіставляй ім'я відвідувача з тим, що гравці кажуть вдень - невідповідності можуть викрити мафію.</div>
+        </div>
+
+        <!-- Адвокат -->
+        <div class="role-info-card team-mafia-card">
+          <div class="role-info-header">
+            <span class="role-info-emoji">⚖️</span>
+            <div>
+              <div class="role-info-name">Адвокат</div>
+              <div class="role-info-team mafia-team">Команда мафії - Прикриття</div>
+            </div>
+          </div>
+          <p class="role-info-desc">Прикриває одного гравця своєї команди вночі - якщо Шериф перевірить захищеного, перевірка покаже «мирний» замість «мафія».</p>
+          <div class="role-info-grid">
+            <div class="role-info-block">
+              <div class="role-info-block-title">✅ Може</div>
+              <ul class="info-list sm">
+                <li>Щоночі захистити одного гравця мафії від перевірки Шерифа</li>
+                <li>Знати хто є мафією у своїй команді</li>
+              </ul>
+            </div>
+            <div class="role-info-block">
+              <div class="role-info-block-title">❌ Не може</div>
+              <ul class="info-list sm">
+                <li>Захищати мирних гравців - лише членів своєї команди</li>
+                <li>Захистити більше одного гравця за ніч</li>
+              </ul>
+            </div>
+          </div>
+          <div class="role-info-tip">💡 <strong>Порада:</strong> Захищай того, кого підозрюють найбільше - саме на ньому Шериф найімовірніше перевірятиме.</div>
+        </div>
+
+      </div>
+
+      <!-- ── НАЛАШТУВАННЯ ── -->
+      <div id="itabSettings" class="info-content" style="display:none">
+
+        <div class="info-section">
+          <h2 class="info-title">Налаштування гри</h2>
+          <p class="info-lead">Усе, що можна тонко підлаштувати під свій стіл: правила ролей, розкриття інформації, умови перемоги. Знаходиться на екрані створення кімнати, вкладка «Старт».</p>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block-title"><i class="fas fa-trophy"></i> Режим гри</div>
+          <p class="info-text" style="margin-bottom:.4rem">Готовий набір правил одним натисканням - застосовує одразу цілу групу пов'язаних налаштувань.</p>
+          <div class="gamemode-cards">
+            <div class="gamemode-card">
+              <div class="gamemode-card-title">🎯 Класичний</div>
+              <div class="gamemode-card-desc">Стандартні дружні правила: Дон перевіряє <strong>до</strong> пострілу Мафії, Лікар може врятувати себе <strong>1 раз</strong> за гру.</div>
+            </div>
+            <div class="gamemode-card">
+              <div class="gamemode-card-title">🏆 Турнірний</div>
+              <div class="gamemode-card-desc">Суворіші правила: Дон перевіряє <strong>після</strong> пострілу Мафії, самолікування Лікаря <strong>заборонено</strong>. Максимум <strong>10 гравців</strong>, ролі обмежені: Мирний / Мафія / Дон / Шериф.</div>
+            </div>
+            <div class="gamemode-card">
+              <div class="gamemode-card-title">🛠️ Власний</div>
+              <div class="gamemode-card-desc">Будь-яка комбінація налаштувань нижче вручну, без обмежень на ролі чи кількість гравців.</div>
+            </div>
+          </div>
+          <div class="setting-info-example">💡 Зміна будь-якого окремого налаштування вручну автоматично перемикає режим на «Власний» - крім переходу між Класичним і Власним, що не чіпає вже обрані ролі.</div>
+        </div>
+
+        <div class="settings-cat-title">🌙 Нічні дії</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Ніч 0 (Ніч знайомства)</div>
+          <div class="setting-info-desc">Підготовча ніч перед основною грою: мафія мовчки знайомиться одне з одним, Дон себе позначає. Ніхто не гине - це відбувається ще до Дня 1.</div>
+          <div class="setting-info-example">📌 Послідовність з увімкненою Ніч 0: Ніч 0 → День 1 → Ніч 1 → День 2 → Ніч 2 ...</div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Перевірка Дона</div>
+          <div class="setting-info-desc">Коли саме Дон виконує свою перевірку на Шерифа відносно пострілу Мафії тієї ж ночі.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">До пострілу Мафії</span>
+            <span class="setting-info-opt">Після пострілу Мафії</span>
+          </div>
+          <div class="flow-diagram">
+            <div class="flow-step">Коханка</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Адвокат</div><span class="flow-arrow">→</span>
+            <div class="flow-step hl">Дон</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Мафія</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Маніяк</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Шериф</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Лікар</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Свідок</div>
+          </div>
+          <div class="setting-info-desc" style="margin:.2rem 0 .4rem">↑ «До пострілу Мафії» (за замовчуванням). При «Після пострілу Мафії» Дон і Мафія міняються місцями:</div>
+          <div class="flow-diagram">
+            <div class="flow-step">Коханка</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Адвокат</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Мафія</div><span class="flow-arrow">→</span>
+            <div class="flow-step hl">Дон</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Маніяк</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Шериф</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Лікар</div><span class="flow-arrow">→</span>
+            <div class="flow-step">Свідок</div>
+          </div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Блокування Мафії Коханкою</div>
+          <div class="setting-info-desc">Як саме нічний візит Коханки до мафіозі впливає на постріл команди мафії цієї ночі.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Вся команда</span>
+            <span class="setting-info-opt">Лише виконавець</span>
+          </div>
+          <div class="setting-info-example">
+            📌 <strong>Вся команда</strong> - постріл зривається, якщо Коханка заблокувала БУДЬ-КОГО живого з Мафії чи Дона.<br>
+            📌 <strong>Лише виконавець</strong> - кожної ночі гра таємно (навіть від ведучого) обирає одного живого мафіозі/Дона «виконавцем». Постріл зривається лише якщо Коханка прийшла саме до нього. Якщо вона заблокує будь-кого іншого - постріл все одно відбудеться. Цей режим робить блокування рідшим і випадковим.
+          </div>
+        </div>
+
+        <div class="settings-cat-title">🩺 Лікар</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Самолікування</div>
+          <div class="setting-info-desc">Чи може Лікар вночі врятувати самого себе.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Без обмежень</span>
+            <span class="setting-info-opt">Один раз за гру</span>
+            <span class="setting-info-opt">Заборонено</span>
+          </div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Повторне лікування</div>
+          <div class="setting-info-desc">Чи можна вилікувати ту саму людину дві ночі поспіль підряд.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Дозволено</span>
+            <span class="setting-info-opt">Заборонено</span>
+          </div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Сила лікування</div>
+          <div class="setting-info-desc">Що станеться, якщо ту саму ціль цієї ночі атакують і Мафія, і Маніяк одночасно.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Від 1 нападу</span>
+            <span class="setting-info-opt">Повний імунітет</span>
+          </div>
+          <div class="setting-info-example">📌 «Від 1 нападу» - Лікар відіб'є лише перший з двох нападів (постріл Мафії), і гравець все одно загине від Маніяка. «Повний імунітет» - гравець виживе, попри подвійну атаку.</div>
+        </div>
+
+        <div class="settings-cat-title">👮 Шериф та перевірки</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Режим перевірки Шерифа</div>
+          <div class="setting-info-desc">Який саме результат бачить Шериф, коли перевіряє гравця вночі.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Мафія/ні</span>
+            <span class="setting-info-opt">Свій/чужий</span>
+          </div>
+          <div class="setting-info-example">📌 «Мафія/ні» показує «Мафія» лише для Мафії й Дона. «Свій/чужий» вважає ворогом ще й Маніяка - показує «Ворог» для Мафії, Дона й Маніяка, «Свій» для решти.</div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Перевірка Самогубці</div>
+          <div class="setting-info-desc">Що покаже перевірка Шерифа, якщо його ціллю виявився Самогубець.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Мирний</span>
+            <span class="setting-info-opt">Чорний</span>
+            <span class="setting-info-opt">Особливий статус</span>
+          </div>
+          <div class="setting-info-example">📌 «Чорний» - Шериф побачить його як загрозу (Мафія/Ворог), хоча Самогубець ні на чиєму боці - зручна пастка для перевірки. «Особливий статус» одразу натякає Шерифу, що ціль - не звичайний мирний.</div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Видимість ролей</div>
+          <div class="setting-info-desc">Наскільки детальний результат отримує Шериф/Дон при перевірці.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Тільки колір</span>
+            <span class="setting-info-opt">Точна роль</span>
+          </div>
+          <div class="setting-info-example">📌 «Тільки колір» - лише «мафія/мирний» чи «свій/ворог». «Точна роль» показує саме назву ролі (напр. «Маніяк», «Лікар») і має пріоритет над налаштуванням перевірки Самогубці.</div>
+        </div>
+
+        <div class="settings-cat-title">☠️ Особливі ролі</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Помста Самогубці</div>
+          <div class="setting-info-desc">Якщо гравців вигнали голосуванням і серед них Самогубець - він забирає з собою ще одного гравця за власним вибором.</div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Серцевий напад Коханки</div>
+          <div class="setting-info-desc">Якщо цієї ночі загинув гравець, якого відвідувала Коханка - вона теж гине разом з ним (взаємна втрата).</div>
+        </div>
+
+        <div class="settings-cat-title">👁️ Інформація після смерті</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Розкриття ролей</div>
+          <div class="setting-info-desc">Скільки інформації про роль дізнаються всі гравці одразу після того, як хтось вибув (вбитий, вигнаний, дискваліфікований).</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Повна роль</span>
+            <span class="setting-info-opt">Лише команда</span>
+            <span class="setting-info-opt">Приховано</span>
+          </div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Кращий хід</div>
+          <div class="setting-info-desc">Гравець, вбитий саме у першу бойову ніч (не рахуючи Ніч 0), отримує право назвати трьох підозрюваних - єдиний шанс вплинути на гру після смерті.</div>
+        </div>
+
+        <div class="settings-cat-title">🏆 Умови перемоги</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Фінал: Мафія vs Маніяк</div>
+          <div class="setting-info-desc">Хто перемагає, якщо в живих лишились тільки Мафія і Маніяк (без жодного мирного).</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Мафія</span>
+            <span class="setting-info-opt">Маніяк</span>
+            <span class="setting-info-opt">Нічия</span>
+          </div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Повне взаємне знищення</div>
+          <div class="setting-info-desc">Хто перемагає в рідкісному випадку, коли живих гравців не лишилось узагалі (усі загинули однієї ночі).</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">Мирні</span>
+            <span class="setting-info-opt">Нічия</span>
+            <span class="setting-info-opt">Темні</span>
+          </div>
+          <div class="setting-info-example">📌 «Темні» - перевага темній стороні: якщо серед загиблих не було Маніяка - перемагає Мафія; якщо не було Мафії - перемагає Маніяк; якщо не було жодного з них - використовується результат налаштування «Фінал: Мафія vs Маніяк».</div>
+        </div>
+
+        <div class="settings-cat-title">⚙️ Додатково</div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Система фолів</div>
+          <div class="setting-info-desc">Ведучий видає фол гравцю за порушення тиші/правил вночі чи регламенту вдень. При <strong>4-му фолі</strong> гравець автоматично дискваліфікується і вибуває з гри.</div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Імунітет першої ночі</div>
+          <div class="setting-info-desc">Заздалегідь обрані гравці (перед стартом гри) не можуть загинути в першу бойову ніч - ні від Мафії, ні від Маніяка.</div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Сортування гравців</div>
+          <div class="setting-info-desc">Порядок відображення списку гравців у ведучого.</div>
+          <div class="setting-info-opts">
+            <span class="setting-info-opt">За номером</span>
+            <span class="setting-info-opt">За ролями</span>
+          </div>
+        </div>
+
+        <div class="setting-info-card">
+          <div class="setting-info-name">Підказки для ведучого</div>
+          <div class="setting-info-desc">Показує додаткові підказки просто в інтерфейсі під час гри - зручно для новачків-ведучих.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  document.querySelectorAll('.info-tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.info-tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('itabRules').style.display    = t.dataset.itab === 'rules'    ? 'block' : 'none';
+    document.getElementById('itabRoles').style.display    = t.dataset.itab === 'roles'    ? 'block' : 'none';
+    document.getElementById('itabSettings').style.display = t.dataset.itab === 'settings' ? 'block' : 'none';
+  }));
+</script>
+</body>
+</html>
